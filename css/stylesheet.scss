@@ -48,11 +48,27 @@ h3 {
   input, select, textarea {
     &.ng-invalid {
       border-radius: 0;
-      //animation: invalid-input 0.5s infinite;
-      background-color: mistyrose;
+      animation: invalid-input 0.5s infinite;
     }
   }
 }
+
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: $marsRed;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: $marsRed;
+  opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: $marsRed;
+  opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $marsRed;
+}
+
 
 
 .btnStyle {
@@ -100,6 +116,7 @@ h3 {
         border-radius: 50%;
         display: block;
         margin: 0 auto;
+        animation: border-pulse 1s infinite;
       }
     }
   }
@@ -121,7 +138,7 @@ h3 {
 
     h1 {
       text-align: center;
-      padding: 10% 0;
+      padding: 2rem 0;
     }
 
     .checkInForm {
@@ -138,10 +155,6 @@ h3 {
         flex: 1;
         width: 100%;
 
-
-        ::-webkit-input-placeholder {
-          color: red;
-        }
 
         .userInfo {
           border: none;
@@ -226,6 +239,7 @@ h3 {
 }
 
 
+
 .report {
 
   background-color: black;
@@ -282,11 +296,11 @@ h3 {
           textarea {
             width: 100%;
             margin-top: 1rem;
+            font-size: 1rem;
 
           }
         }
       }
     }
-
   }
 }
