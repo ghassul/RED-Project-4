@@ -1,0 +1,292 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "animations";
+
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 18px;
+  height: 100%;
+  width: 100%;
+  font-family: "Raleway", serif;
+}
+
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.show-validation {
+  transition: 0.5s linear all;
+}
+
+.show-validation {
+  input, select, textarea {
+    &.ng-invalid {
+      border-radius: 0;
+      //animation: invalid-input 0.5s infinite;
+      background-color: mistyrose;
+    }
+  }
+}
+
+
+.btnStyle {
+  background-color: $marsRed;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  box-shadow: none;
+  width: 100%;
+  font-size: 1rem;
+}
+
+
+
+.home {
+
+  .homePage {
+    background-color: $marsRed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #fff;
+    width: 100%;
+    flex: 1;
+
+
+
+    h1 {
+      text-transform: uppercase;
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .flashyButton {
+
+      a {
+        height: 75px;
+        width: 75px;
+        background: #fff;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+
+.checkIn {
+
+
+
+
+  .checkInPage {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      text-align: center;
+      padding: 10% 0;
+    }
+
+    .checkInForm {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      padding: 0 2rem;
+
+
+      fieldset {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        width: 100%;
+
+
+        ::-webkit-input-placeholder {
+          color: red;
+        }
+
+        .userInfo {
+          border: none;
+          box-shadow: none;
+          height: 2rem;
+          padding-left: .5rem;
+          margin-bottom: 1.5rem;
+          width: 100%;
+          font-family: "Raleway", serif;
+          font-size: 1rem;
+
+        }
+
+        .customSelect{
+          height: 2rem;
+          background-color: white;
+          line-height: 2rem;
+
+          select {
+            font-size: 1rem;
+            line-height: 2rem;
+            padding-left: .5rem;
+            font-family: 'Raleway', serif;
+            width: 100%;
+            border: 1px solid transparent;
+            outline: none;
+            -webkit-appearance: none;
+
+            option {
+              color: $marsRed;
+            }
+          }
+        }
+
+        .btnStyle {
+          background-color: $marsRed;
+          color: white;
+          padding: 1rem 2rem;
+          border: none;
+          box-shadow: none;
+          width: 100%;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+
+.encounters {
+
+  .encountersPage {
+
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+
+    .encountersHeading {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .encountersList {
+      flex: 1;
+      overflow: scroll;
+      padding: 0 1rem 6rem;
+
+      li {
+        margin-bottom: 1rem;
+      }
+    }
+
+    footer {
+      display: flex;
+      flex: 0.5;
+      flex-direction: column;
+      background-color: black;
+      justify-content: center;
+      padding: 1rem;
+    }
+  }
+}
+
+
+.report {
+
+  background-color: black;
+
+  .reportPage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+
+    .reportHeading {
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .formContainer {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      .reportForm {
+        display: flex;
+        flex-direction: column;
+        padding: 0 2rem;
+        flex: 1;
+
+        fieldset {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+
+          .customSelect{
+            height: 2rem;
+            background-color: white;
+            line-height: 2rem;
+
+            select {
+              font-size: 1rem;
+              line-height: 2rem;
+              padding-left: .5rem;
+              font-family: 'Raleway', serif;
+              width: 100%;
+              border: 1px solid transparent;
+              outline: none;
+              -webkit-appearance: none;
+
+              option {
+                color: $marsRed;
+              }
+            }
+          }
+
+          textarea {
+            width: 100%;
+            margin-top: 1rem;
+
+          }
+        }
+      }
+    }
+
+  }
+}

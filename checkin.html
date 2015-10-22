@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check In</title>
+
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body class="checkIn container" ng-app="app">
+
+<div class="checkInPage">
+
+    <h1>Who are you?</h1>
+
+
+    <form action="#" novalidate name="checkInForm" class="checkInForm" ng-class="{ 'show-validation' : showValidation}" ng-controller="CheckinCtrl" ng-submit="submit()">
+
+        <fieldset>
+
+                <input class="userInfo" type="text" name="name" id="name" placeholder="Name" ng-model="user.name" required/>
+
+                <input class="userInfo" type="text" name="age" id="age" placeholder="Age" ng-model="user.age" required>
+
+                <div class="customSelect">
+                    <select name="select-occupation" id="select-occupation" ng-model="user.occupation" required>
+                        <option value="">Select occupation</option>
+                        <option value="janitor">Janitor</option>
+                        <option value="alienHunter">Alien Hunter</option>
+                        <option value="dustFarmer">Dust Farmer</option>
+                        <option value="batteryTechnician">Battery Technician</option>
+                        <option value="yogaTeacher">Yoga Teacher</option>
+                    </select>
+                </div>
+
+        </fieldset>
+
+        <fieldset>
+
+            <input type="submit" class="btnStyle" value="Check in" ng-click="enter($event, checkInForm)">
+            <!--<button class="button" class="checkInBtn" ng-click="enter($event, checkInForm)">Check in</button>-->
+
+        </fieldset>
+
+    </form>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report Encounter</title>
+
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body class="report container" ng-app="app">
+
+<div class="reportPage">
+
+    <div class="reportHeading">
+        <h1>Report Encounter</h1>
+        <h3>Safety on Mars is your responsibility</h3>
+    </div>
+
+    <div class="formContainer">
+        <form action="" novalidate name="reportForm" class="reportForm" ng-controller="ReportCtrl" ng-submit="submit()">
+
+            <fieldset>
+                <div class="customSelect">
+                    <select name="select-alien" id="select-alien" ng-model="report.selectedAlien">
+                        <option value="">Select alien type</option>
+                        <option value="lizardMan">Lizard Man</option>
+                        <option value="giantSlug">Giant Slug</option>
+                        <option value="rogueAndroid">Rogue Android</option>
+                        <option value="octospider">Octospider</option>
+                        <option value="spiderpus">Spiderpus</option>
+                    </select>
+                </div>
+
+                <textarea name="actionTaken" id="actionTaken" cols="30" rows="10" placeholder="Action taken" ng-model="report.actionTaken"></textarea>
+
+            </fieldset>
+
+
+            <fieldset>
+                <input class="btnStyle" type="submit" value="Submit Report">
+            </fieldset>
+
+        </form>
+
+
+
+    </div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
