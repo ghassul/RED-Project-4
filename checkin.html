@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Check In</title>
 
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-</head>
-<body class="checkIn container" ng-app="app">
-
-<div class="checkInPage">
+<div class="checkInPage container" ng-swipe-left="enter($event, checkInForm)" ng-swipe-right="prev()">
 
     <h1>Who are you?</h1>
 
 
-    <form action="#" novalidate name="checkInForm" class="checkInForm" ng-class="{ 'show-validation' : showValidation}" ng-controller="CheckinCtrl" ng-submit="submit()">
+    <form action="#" novalidate name="checkInForm" class="checkInForm"
+          ng-class="{ 'show-validation' : showValidation}" ng-submit="enter($event, checkInForm)">
 
         <fieldset>
 
-                <input class="userInfo" type="text" name="name" id="name" placeholder="Name" ng-model="user.name" required/>
+                <input class="userInfo" type="text" name="name" id="name" placeholder="Name" ng-model="colonist.name" required/>
 
-                <input class="userInfo" type="text" name="age" id="age" placeholder="Age" ng-model="user.age" required>
+                <input class="userInfo" type="text" name="age" id="age" placeholder="Age" ng-model="colonist.age" required>
 
                 <div class="customSelect">
                     <select name="select-occupation" id="select-occupation" ng-model="user.occupation" required>
@@ -38,17 +28,8 @@
 
         <fieldset>
 
-            <input type="submit" class="btnStyle" value="Check in" ng-click="enter($event, checkInForm)">
-            <!--<button class="button" class="checkInBtn" ng-click="enter($event, checkInForm)">Check in</button>-->
+            <input type="submit" class="btnStyle" value="Check in" >
 
         </fieldset>
-
     </form>
 </div>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-
-</body>
-</html>

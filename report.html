@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Report Encounter</title>
 
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-</head>
-
-<body class="report container" ng-app="app">
-
-<div class="reportPage">
+<div class="reportPage container" ng-swipe-right="prev()" ng-swipe-left="submit()">
 
     <div class="reportHeading">
         <h1>Report Encounter</h1>
@@ -19,7 +7,7 @@
     </div>
 
     <div class="formContainer">
-        <form action="" novalidate name="reportForm" class="reportForm" ng-controller="ReportCtrl" ng-submit="submit()">
+        <form action="" novalidate name="reportForm" class="reportForm" ng-submit="submit()">
 
             <fieldset>
                 <div class="customSelect">
@@ -43,16 +31,5 @@
             </fieldset>
 
         </form>
-
-
-
     </div>
 </div>
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
-
-</body>
-</html>

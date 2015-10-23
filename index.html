@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="app" lang="en">
 <head>
     <meta charset="utf-8">
     <title>Project 4</title>
@@ -9,26 +9,16 @@
 
 </head>
 
-<body class="home container">
+<body>
 
-
-
-<div class="homePage">
-    <h1 class="welcome">Welcome to Mars!</h1>
-
-    <div class="flashyButton">
-        <a href="checkin.html"></a>
-    </div>
-
-    <h2>Check in now</h2>
-</div>
-
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+    <div ui-view class="page {{stateName}}"></div>
 
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-touch.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 
 </html>
