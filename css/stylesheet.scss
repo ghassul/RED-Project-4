@@ -1,6 +1,5 @@
 @import "reset";
 @import "variables";
-@import "mixins";
 @import "fonts";
 @import "animations";
 
@@ -77,7 +76,6 @@ h3 {
 }
 
 
-
 .btnStyle {
   background-color: $marsRed;
   color: white;
@@ -89,7 +87,6 @@ h3 {
 }
 
 
-
 .homePage {
   background-color: $marsRed;
   display: flex;
@@ -99,7 +96,6 @@ h3 {
   color: #fff;
   width: 100%;
   flex: 1;
-
 
 
   h1 {
@@ -125,8 +121,6 @@ h3 {
     }
   }
 }
-
-
 
 
 .checkInPage {
@@ -204,8 +198,6 @@ h3 {
 }
 
 
-
-
 .encountersPage {
 
   display: flex;
@@ -236,9 +228,6 @@ h3 {
     padding: 1rem;
   }
 }
-
-
-
 
 
 .reportPage {

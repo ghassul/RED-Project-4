@@ -12,21 +12,16 @@
 
             <fieldset>
                 <div class="customSelect">
-                    <select name="select-alien" id="select-alien" ng-model="report.selectedAlien" required>
-                        <option value="">Select alien type</option>
-                        <option value="lizardMan">Lizard Man</option>
-                        <option value="giantSlug">Giant Slug</option>
-                        <option value="rogueAndroid">Rogue Android</option>
-                        <option value="octospider">Octospider</option>
-                        <option value="spiderpus">Spiderpus</option>
+                    <select name="select-alien" id="select-alien" ng-model="report.atype" required>
+                        <option value="" class="placeholder">Select alien type</option>
+                        <option value="{{ alien.type }}" ng-repeat="alien in aliens">{{ alien.type }}</option>
                     </select>
                 </div>
 
-                <textarea name="actionTaken" id="actionTaken" cols="30" rows="10" placeholder="Action taken"
-                          ng-model="report.actionTaken" required></textarea>
-
+                <textarea name="action" id="action" cols="30" rows="10" placeholder="Action taken"
+                          ng-model="report.action" required>
+                </textarea>
             </fieldset>
-
 
             <fieldset>
                 <input class="btnStyle" type="submit" value="Submit Report">
