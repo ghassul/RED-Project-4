@@ -2,7 +2,7 @@
  * Created by Blaze on 2015-10-20.
  */
 (function() {
-    var app = angular.module('app', ['ui.router', 'ngAnimate', 'ngTouch'])
+    var app = angular.module('app', ['ui.router', 'ngAnimate', 'ngTouch', 'ngCookies'])
 
     .run(runBlock);
 
@@ -42,7 +42,14 @@
                     .state('checkin', {
                         url: '/checkin',
                         templateUrl: 'checkin.html',
-                        controller: 'CheckinCtrl'
+                        controller: 'CheckinCtrl',
+                        resolve: {
+                            user: ['$cookies', function($cookies){
+                                if($cookies.getObject('colonist')){
+                                    $state.go('encounters');
+                                }
+                            }]
+                        }
                     })
                     .state('encounters', {
                         url: '/encounters',
@@ -61,27 +68,31 @@
 
 
 
-    app.controller('WelcomeCtrl', ['$scope', '$state', function($scope, $state){
+    app.controller('WelcomeCtrl', ['$scope', '$state', '$cookies', function($scope, $state, $cookies){
+
+        $cookies.putObject('colonist', undefined);
+
         $scope.next = function(){
             $state.go('checkin');
-        }
+        };
+
     }]);
 
 
 
 
-    app.controller('CheckinCtrl', ['$scope', '$state', '$http', function($scope, $state, $http){
+    app.controller('CheckinCtrl', ['$scope', '$state', '$http', '$cookies', function($scope, $state, $http, $cookies){
 
+        var ALIEN_TYPE_API_URL = "https://red-wdp-api.herokuapp.com/api/mars/aliens";
         var API_URL_GET_JOBS = "https://red-wdp-api.herokuapp.com/api/mars/jobs";
         var API_URL_CREATE_COLONIST = "https://red-wdp-api.herokuapp.com/api/mars/colonists";
 
 
         $http.get(API_URL_GET_JOBS)
             .then(function(response){
+                $scope.jobs = response.data.jobs;
 
-                $scope.jobs = response.data;
-
-                console.log(response.data.data);
+                console.log(response.data);
 
             });
 
@@ -100,13 +111,18 @@
                 $scope.showValidation = true;
             } else {
 
-                //$http.post({
-                //    url: API_URL_CREATE_COLONIST,
-                //    data: {}
-                //
-                //}).then(function(){
+                $http({
+                    method: 'POST',
+                    url: API_URL_CREATE_COLONIST,
+                    data: { colonist: $scope.colonist }
+
+                }).then(function(response){
+
+                    $cookies.putObject('colonist', response.data.colonist);
                     $state.go('encounters');
-                //})
+
+                    debugger;
+                })
 
 
 
@@ -117,7 +133,24 @@
 
 
 
-    app.controller('EncountersCtrl', ['$scope', '$state', function($scope, $state) {
+    app.controller('EncountersCtrl', ['$scope', '$state', '$http', function($scope, $state, $http) {
+
+        var ENCOUNTERS_API_URL = 'https://red-wdp-api.herokuapp.com/api/mars/encounters';
+
+        $http.get(ENCOUNTERS_API_URL)
+            .then(function(response){
+
+                $scope.encounters = response.data.encounters;
+
+                console.log(response.data.encounters);
+            });
+
+
+        $scope.message = {
+            text: 'hello world!',
+            time: new Date()
+        };
+
 
         $scope.next = function(){
             $state.go('report');
@@ -140,10 +173,10 @@
             $state.go('encounters')
         };
 
-        $scope.enter = function(e){
+        $scope.submit = function(e){
             e.preventDefault();
 
-            if ($scope.checkInForm.$invalid) {
+            if ($scope.reportForm.$invalid) {
                 $scope.showValidation = true;
             }
         };

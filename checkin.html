@@ -9,20 +9,19 @@
 
         <fieldset>
 
-                <input class="userInfo" type="text" name="name" id="name" placeholder="Name" ng-model="colonist.name" required/>
+            <input class="userInfo" type="text" name="name" id="name" placeholder="Name" ng-model="colonist.name" required/>
 
-                <input class="userInfo" type="text" name="age" id="age" placeholder="Age" ng-model="colonist.age" required>
+            <input class="userInfo" type="text" name="age" id="age" placeholder="Age" ng-model="colonist.age" required>
 
-                <div class="customSelect">
-                    <select name="select-occupation" id="select-occupation" ng-model="user.occupation" required>
-                        <option value="">Select occupation</option>
-                        <option value="janitor">Janitor</option>
-                        <option value="alienHunter">Alien Hunter</option>
-                        <option value="dustFarmer">Dust Farmer</option>
-                        <option value="batteryTechnician">Battery Technician</option>
-                        <option value="yogaTeacher">Yoga Teacher</option>
-                    </select>
-                </div>
+            <div class="customSelect">
+                <select name="select-occupation" id="select-occupation"
+                        ng-class="{ placeholder: !colonist.job_id }" ng-model="colonist.job_id" required>
+
+                    <option value="" class="placeholder">Select occupation</option>
+                    <option value="{{ job.id }}" ng-repeat="job in jobs">{{ job.name }}</option>
+
+                </select>
+            </div>
 
         </fieldset>
 

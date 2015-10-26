@@ -1,5 +1,5 @@
 
-<div class="reportPage container" ng-swipe-right="prev()" ng-swipe-left="submit()">
+<div class="reportPage container" ng-swipe-right="prev()" ng-swipe-left="submit($event, reportForm)">
 
     <div class="reportHeading">
         <h1>Report Encounter</h1>
@@ -7,11 +7,12 @@
     </div>
 
     <div class="formContainer">
-        <form action="" novalidate name="reportForm" class="reportForm" ng-submit="submit()">
+        <form action="" ng-class="{ 'show-validation' : showValidation}" novalidate name="reportForm"
+              class="reportForm" ng-submit="submit($event, reportForm)">
 
             <fieldset>
                 <div class="customSelect">
-                    <select name="select-alien" id="select-alien" ng-model="report.selectedAlien">
+                    <select name="select-alien" id="select-alien" ng-model="report.selectedAlien" required>
                         <option value="">Select alien type</option>
                         <option value="lizardMan">Lizard Man</option>
                         <option value="giantSlug">Giant Slug</option>
@@ -21,7 +22,8 @@
                     </select>
                 </div>
 
-                <textarea name="actionTaken" id="actionTaken" cols="30" rows="10" placeholder="Action taken" ng-model="report.actionTaken"></textarea>
+                <textarea name="actionTaken" id="actionTaken" cols="30" rows="10" placeholder="Action taken"
+                          ng-model="report.actionTaken" required></textarea>
 
             </fieldset>
 
