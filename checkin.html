@@ -3,14 +3,12 @@
 
     <h1>Who are you?</h1>
 
-
     <form action="#" novalidate name="checkInForm" class="checkInForm"
           ng-class="{ 'show-validation' : showValidation}" ng-submit="enter($event, checkInForm)">
 
         <fieldset>
 
             <input class="userInfo" type="text" name="name" id="name" placeholder="Name" ng-model="colonist.name" required/>
-
             <input class="userInfo" type="number" name="age" id="age" placeholder="Age" ng-model="colonist.age" required>
 
             <div class="customSelect">
@@ -26,9 +24,7 @@
         </fieldset>
 
         <fieldset>
-
             <input type="submit" class="btnStyle" value="Check in" >
-
         </fieldset>
     </form>
 </div>

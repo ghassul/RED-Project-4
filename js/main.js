@@ -15,7 +15,6 @@
         $rootScope.$on('$stateChangeStart', function (event, toState) {
             $rootScope.stateName = toState.name;
         });
-
     }
 
         app.config(['$stateProvider',
@@ -69,16 +68,13 @@
         $scope.next = function(){
             $state.go('checkin');
         };
-
     }]);
 
 
     app.controller('CheckinCtrl', ['$scope', '$state', '$http', '$cookies', function($scope, $state, $http, $cookies){
 
-
         var API_URL_GET_JOBS = "https://red-wdp-api.herokuapp.com/api/mars/jobs";
         var API_URL_CREATE_COLONIST = "https://red-wdp-api.herokuapp.com/api/mars/colonists";
-
 
         $http.get(API_URL_GET_JOBS)
             .then(function(response){
@@ -123,16 +119,12 @@
             .then(function(response){
 
                 $scope.encounters = response.data.encounters;
-
-                console.log(response.data.encounters);
             });
 
         $scope.message = {
             text: 'hello world!',
             time: new Date()
         };
-
-        console.log($scope.message.time);
 
         $scope.next = function(){
             $state.go('report');
@@ -154,11 +146,9 @@
             .then(function(response){
 
                 $scope.aliens = response.data.aliens;
-                console.log(response.data.aliens);
             });
 
         $scope.report = {};
-
         $scope.report.colonist_id = 142;
         $scope.report.date = "1899-05-10";
 

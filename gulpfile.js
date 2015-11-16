@@ -1,12 +1,10 @@
 'use strict';
 
-
 var gulp = require('gulp'); // Load Gulp!
 var browserSync = require('browser-sync').create();
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var historyApiFallback = require('connect-history-api-fallback');
-
 
 
 gulp.task('scss', function() {
@@ -17,7 +15,6 @@ gulp.task('scss', function() {
         }))
         .pipe(gulp.dest('./css'));
 });
-
 
 gulp.task('browser-sync', function() {
     browserSync.init({
