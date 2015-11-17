@@ -161,7 +161,6 @@ h3 {
         width: 100%;
         font-family: "Raleway", serif;
         font-size: 1rem;
-
       }
 
       .customSelect{
@@ -178,10 +177,15 @@ h3 {
           border: 1px solid transparent;
           outline: none;
           -webkit-appearance: none;
+          color: black;
 
           option {
             color: $marsRed;
           }
+        }
+
+        select.ng-invalid {
+          color: $marsRed;
         }
       }
     }
@@ -264,10 +268,15 @@ h3 {
             border: 1px solid transparent;
             outline: none;
             -webkit-appearance: none;
+            color: black;
 
             option {
               color: $marsRed;
             }
+          }
+
+          select.ng-invalid {
+            color: $marsRed;
           }
         }
 
@@ -278,7 +287,6 @@ h3 {
           resize: none;
           font-family: 'Raleway', serif;
           padding-left: .5rem;
-
         }
       }
     }

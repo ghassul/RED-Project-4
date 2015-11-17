@@ -294,9 +294,12 @@ h3 {
           width: 100%;
           border: 1px solid transparent;
           outline: none;
-          -webkit-appearance: none; }
+          -webkit-appearance: none;
+          color: black; }
           .checkInPage .checkInForm fieldset .customSelect select option {
             color: #ed4343; }
+        .checkInPage .checkInForm fieldset .customSelect select.ng-invalid {
+          color: #ed4343; }
 
 .encountersPage {
   display: flex;
@@ -353,9 +356,12 @@ h3 {
             width: 100%;
             border: 1px solid transparent;
             outline: none;
-            -webkit-appearance: none; }
+            -webkit-appearance: none;
+            color: black; }
             .reportPage .formContainer .reportForm fieldset .customSelect select option {
               color: #ed4343; }
+          .reportPage .formContainer .reportForm fieldset .customSelect select.ng-invalid {
+            color: #ed4343; }
         .reportPage .formContainer .reportForm fieldset textarea {
           width: 100%;
           margin-top: 1rem;
