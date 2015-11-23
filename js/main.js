@@ -25,14 +25,14 @@
                      $locationProvider){
 
                 $locationProvider.html5Mode({
-                    enabled: true,
+                    enabled: false,
                     requireBase: false,
                     rewriteLinks: false
                 });
 
                 $stateProvider
                     .state('welcome', {
-                        url: '/',
+                        url: '',
                         templateUrl: 'home.html',
                         controller: 'WelcomeCtrl'
                     })
